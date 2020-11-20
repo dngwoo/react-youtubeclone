@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  padding: 5px;
+  & span {
+    font-size: 30px;
+  }
+}
