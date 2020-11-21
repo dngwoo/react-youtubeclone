@@ -13,5 +13,7 @@ module.exports = {
   },
   plugins: ['react'],
   ignorePatterns: ['node_modules', 'postcss.config.js'],
-  rules: {},
+  rules: {
+    'dot-notation': 'off',
+  },
 };

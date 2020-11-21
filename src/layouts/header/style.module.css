@@ -1,10 +1,30 @@
 .header {
   display: flex;
   width: 100%;
-  max-width: 1200px;
   justify-content: space-between;
+  align-items: center;
   padding: 5px;
-  & span {
-    font-size: 30px;
+  background-color: #2c2c2c;
+  & .header__left {
+    & span {
+      font-size: 1.25em;
+      color: white;
+      margin-left: 0.325em;
+    }
+    & svg {
+      font-size: 1.25em;
+      color: red;
+    }
+  }
+
+  & .form {
+    width: 30%;
+    min-width: 15.625em;
+    & input {
+      width: 80%;
+    }
+    & button {
+      width: 20%;
+    }
   }
 }
