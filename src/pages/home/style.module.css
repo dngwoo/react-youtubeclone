@@ -11,6 +11,24 @@
     }
     & li {
       box-shadow: var(--base-boxshadow);
+      & .thumbnail {
+        & img {
+          width: 100%;
+        }
+      }
+      & .video-info {
+        display: flex;
+        padding: 0.5em 0;
+        & .avatar {
+          margin-right: 0.5em;
+        }
+        & p {
+          margin-bottom: 0.5em;
+        }
+        & .name {
+          color: #aaaaaa;
+        }
+      }
     }
   }
 }

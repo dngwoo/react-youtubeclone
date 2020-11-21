@@ -41,4 +41,7 @@ input {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  & .main-wrapper {
+    padding: 0.625em 0;
+  }
 }

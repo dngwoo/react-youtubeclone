@@ -16,5 +16,7 @@ module.exports = {
   rules: {
     'dot-notation': 'off',
     'arrow-body-style': 'off',
+    'no-console': 'off',
+    'react/forbid-prop-types': 'off',
   },
 };
