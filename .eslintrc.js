@@ -15,5 +15,6 @@ module.exports = {
   ignorePatterns: ['node_modules', 'postcss.config.js'],
   rules: {
     'dot-notation': 'off',
+    'arrow-body-style': 'off',
   },
 };

@@ -1,0 +1,16 @@
+.home {
+  & ul {
+    display: grid;
+    grid-gap: 0.3125em;
+    /* Document level adjustments */
+    @media (min-width: 25rem) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 56.25rem) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    & li {
+      box-shadow: var(--base-boxshadow);
+    }
+  }
+}
