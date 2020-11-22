@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import style from './style.module.css';
 import Home from '../../pages/home';
-import VideoDetail from '../../pages/video-detail';
+import VideoDetail from '../../pages/video_detail';
 import Header from '../header';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       const { data } = await axios(config);
       setVideos(data.items);
     } catch (error) {
-      console.error(error.response.data);
+      console.error(error);
     }
   }, []);
   return (
@@ -30,7 +30,9 @@ function App() {
             <Route exact path="/">
               <Home videos={videos} />
             </Route>
-            <Route path="/video/:id" component={VideoDetail} />
+            <Route path="/video/:id">
+              <VideoDetail videos={videos} />
+            </Route>
           </Switch>
         </Router>
       </main>
