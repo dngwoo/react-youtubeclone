@@ -7,6 +7,7 @@ import style from './style.module.css';
 import Home from '../../pages/home';
 import VideoDetail from '../../pages/video_detail';
 import Header from '../header';
+import Search from '../../pages/search';
 
 function App() {
   const [videos, setVideos] = useState([]);
@@ -25,27 +26,10 @@ function App() {
     }
   }, []);
 
-  const onSearchClick = async (query) => {
-    const config = {
-      method: 'get',
-      url: `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}`,
-    };
-
-    let searchVideos;
-    try {
-      const { data } = await axios(config);
-      searchVideos = data;
-    } catch (error) {
-      console.error(error);
-    }
-
-    return searchVideos;
-  };
-
   return (
     <div className={style.wrapper}>
       <Router>
-        <Header onSearchClick={onSearchClick} />
+        <Header />
         <main className={style['main-wrapper']}>
           <Switch>
             <Route exact path="/">
@@ -53,6 +37,9 @@ function App() {
             </Route>
             <Route path="/video/:id">
               <VideoDetail videos={videos} />
+            </Route>
+            <Route path="/search">
+              <Search />
             </Route>
           </Switch>
         </main>

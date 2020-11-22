@@ -1,11 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearchengin, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import style from './style.module.css';
 
-const Header = ({ onSearchClick }) => {
+const Header = () => {
   const [value, setValue] = useState('');
   const history = useHistory();
 
@@ -15,8 +14,7 @@ const Header = ({ onSearchClick }) => {
 
   const handleSearchClick = useCallback(async (e) => {
     e.preventDefault();
-    const videos = await onSearchClick(value.trim());
-    history.push('/search', videos);
+    history.push(`/search?q=${value.trim()}`);
   });
 
   return (
@@ -38,10 +36,6 @@ const Header = ({ onSearchClick }) => {
       </form>
     </header>
   );
-};
-
-Header.propTypes = {
-  onSearchClick: PropTypes.func.isRequired,
 };
 
 export default Header;
