@@ -2,8 +2,8 @@
 React를 활용하여 유튜브를 클론해봅니다.
 
 ## 페이지 구성
-- [ ] Home
-- [ ] Detail
+- [x] Home
+- [x] Detail
 - [ ] Search
 
 ## 포맷터 셋팅

@@ -11,22 +11,30 @@ const VideoDetail = ({ videos }) => {
     },
   };
   const { id } = useParams();
-  const filterVideos = videos.filter((val) => val.id.videoId !== id);
-  const video = videos.filter((val) => val.id.videoId === id);
+  let video;
+  const filterVideos = videos.filter((val) => {
+    if (val.id === id) {
+      video = val;
+      return false;
+    }
+    return true;
+  });
 
   return (
     <div className={style['video-detail-wrapper']}>
       <div className={style['video-detail']}>
         <YouTube videoId={id} opts={opts} className={style.video} />
-        <div className={style['video-info']}>
+        <div className={style['video-content']}>
           <span>{video.snippet.title}</span>
-          <span>비디오 설명</span>
+          <span>{video.snippet.tags}</span>
+          <span>{video.snippet.publishedAt}</span>
+          <p>{video.snippet.description}</p>
         </div>
       </div>
       <ul>
         {filterVideos.length > 0 && filterVideos.map((val) => (
-          <li key={val.id.videoId}>
-            <Link to={`/video/${val.id.videoId}`}>
+          <li key={val.id}>
+            <Link to={`/video/${val.id}`}>
               <div className={style.thumbnail}>
                 <img src={val.snippet.thumbnails.medium.url} alt="thumbnail" />
               </div>

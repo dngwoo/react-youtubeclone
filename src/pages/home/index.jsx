@@ -11,8 +11,8 @@ const Home = ({ videos }) => {
     <div className={style.home}>
       <ul>
         {videos.length > 0 && videos.map((val) => (
-          <li key={val.id.videoId}>
-            <Link to={`/video/${val.id.videoId}`}>
+          <li key={val.id}>
+            <Link to={`/video/${val.id}`}>
               <div className={style.thumbnail}>
                 <img src={val.snippet.thumbnails.medium.url} alt="thumbnail" />
               </div>

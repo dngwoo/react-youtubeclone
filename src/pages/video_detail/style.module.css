@@ -11,6 +11,11 @@
       width: 100%;
       height: 400px;
     }
+    & .video-content {
+      & span {
+        display: block;
+      }
+    }
   }
   & ul {
     width: 100%;
